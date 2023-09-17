@@ -1,11 +1,11 @@
 public class Employee {
     private String names;
-    private int salary;
+    private float salary;
     private int departament;
     private static int checker = 0;
     private int id;
 
-    public Employee(String names, int salary, int departament) {
+    public Employee(String names, float salary, int departament) {
         this.names = names;
         this.salary = salary;
         this.departament = departament;
@@ -18,7 +18,7 @@ public class Employee {
         return names;
     }
 
-    public int getSalary() {
+    public float getSalary() {
         return salary;
     }
 
@@ -30,7 +30,7 @@ public class Employee {
         return id;
     }
 
-    public void setSalary(int a) {
+    public void setSalary(float a) {
         salary = a;
 
     }
@@ -42,65 +42,8 @@ public class Employee {
 
     @Override
     public String toString() {
-        return " Name " + names + " Salary " + salary + " Departament " + departament + " Id " + id;
+        return "names='" + names +", salary=" + salary + ", departament=" + departament + ", id=" + id;
     }
 
-    public static void printAll(Employee[] a) {
-        for (Employee employee : a) {
-            if (employee != null) {
-                System.out.println(employee);
-            }
-        }
-    }
-
-    public static void foundSalaryCountAndAverageNum(Employee[] a) {
-        int total = 0;
-        int index = 0;
-        double averageCount = 0;
-        for (Employee employee : a) {
-            if (employee != null) {
-                index++;
-                total = total + employee.salary;
-            }
-
-        }
-        averageCount = total / index;
-        System.out.println(total);
-        System.out.println(averageCount);
-
-    }
-
-    public static int foundMinSalary(Employee[]a) {
-        int minSalary = 1000000;
-        for (Employee employee : a) {
-            if (employee != null) {
-                if (employee.salary < minSalary) {
-                    minSalary = employee.salary;
-                }
-            }
-        }
-        return minSalary;
-    }
-
-
-    public static int foundMaxSalary(Employee[]a) {
-        int maxSalary = -1;
-        for (Employee employee : a) {
-            if (employee != null) {
-                if (employee.salary > maxSalary) {
-                    maxSalary = employee.salary;
-                }
-            }
-        }
-        return maxSalary;
-    }
-
-    public static void getAllNames(Employee[]a) {
-        for (Employee employee : a) {
-            if (employee != null) {
-                System.out.println(employee.getNames());
-            }
-        }
-    }
 
 }
